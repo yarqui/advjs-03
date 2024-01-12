@@ -1,5 +1,6 @@
 import iziToast from 'izitoast';
 import SlimSelect from 'slim-select';
+import 'slim-select/styles';
 import 'izitoast/dist/css/iziToast.min.css';
 import { handleFetchedData, hideElement, showElement } from './js/common';
 import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
