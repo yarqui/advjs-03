@@ -31,7 +31,5 @@ export const handleFetchedData = (data, refs, cb) => {
     return;
   }
 
-  refs.error.textContent =
-    'All cats are busy sipping milk, sorry. Try again later';
-  throw new Error('No data for this query');
+  throw new Error('All cats are busy sipping milk, sorry. Try again later');
 };

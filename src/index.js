@@ -1,15 +1,12 @@
-import {
-  handleFetchedData,
-  hideElement,
-  showElement,
-  isNotEmpty,
-} from './common';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
+import { handleFetchedData, hideElement, showElement } from './js/common';
 import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
 
 export const refs = {
   breedSelect: document.querySelector('select.breed-select'),
-  loader: document.querySelector('p.loader'),
-  error: document.querySelector('p.error'),
+  loader: document.querySelector('span.loader'),
   infoBlock: document.querySelector('div.cat-info'),
 };
 
@@ -46,7 +43,6 @@ const handleChooseBreed = () => {
   const index = refs.breedSelect.selectedIndex;
   const selectedValue = refs.breedSelect.options[index].value;
 
-  hideElement(refs.error);
   hideElement(refs.infoBlock);
   showElement(refs.loader);
 
@@ -59,7 +55,7 @@ const handleChooseBreed = () => {
     .catch(error => {
       console.error('error:', error);
       hideElement(refs.loader);
-      showElement(refs.error);
+      iziToast.error({ message: `${error.message}`, position: 'topCenter' });
     });
 };
 
@@ -74,7 +70,7 @@ fetchBreeds()
   .catch(error => {
     console.log('error:', error);
     hideElement(refs.loader);
-    showElement(refs.error);
+    iziToast.error({ message: `${error.message}`, position: 'topCenter' });
   });
 
 refs.breedSelect.addEventListener('change', handleChooseBreed);
