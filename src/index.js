@@ -1,5 +1,5 @@
 import iziToast from 'izitoast';
-import SlimSelect from 'slim-select';
+// import SlimSelect from 'slim-select';
 import 'izitoast/dist/css/iziToast.min.css';
 import { handleFetchedData, hideElement, showElement } from './js/common';
 import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
@@ -21,9 +21,9 @@ const renderSelectOptions = cats => {
     .join('');
 
   refs.breedSelect.insertAdjacentHTML('beforeend', options);
-  new SlimSelect({
-    select: 'select.breed-select',
-  });
+  // new SlimSelect({
+  //   select: 'select.breed-select',
+  // });
 };
 
 export const renderCatMarkup = catInfo => {
