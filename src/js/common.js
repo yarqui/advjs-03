@@ -1,14 +1,3 @@
-export const ATTRIBUTES = {
-  disabled: 'disabled',
-  hidden: 'hidden',
-};
-
-export const ATTRIBUTE_METHODS = {
-  set: 'set',
-  remove: 'remove',
-  toggle: 'toggle',
-};
-
 const CLASSES = {
   hidden: 'visually-hidden',
 };
